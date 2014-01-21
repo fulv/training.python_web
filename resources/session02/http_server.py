@@ -17,7 +17,7 @@ def server(log_buffer=sys.stderr):
             try:
                 print >>log_buffer, 'connection - {0}:{1}'.format(*addr)
                 while True:
-                    data = conn.recv(16)
+                    data = conn.recv(1024)
                     print >>log_buffer, 'received "{0}"'.format(data)
                     if data:
                         msg = 'sending data back to client'
